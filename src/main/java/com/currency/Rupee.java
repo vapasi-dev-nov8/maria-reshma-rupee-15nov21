@@ -18,8 +18,19 @@ public class Rupee {
          return new Rupee(rupee1.value + rupee2.value);
     }
 
-    public int getValue(){
-        return this.value;
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Rupee rupee = (Rupee) object;
+        return value == rupee.value;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
+    }
+
+
 
 }
