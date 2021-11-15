@@ -2,22 +2,24 @@ package com.currency;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RupeeTestClass {
 
     @Test
-    public void shouldReturnRupeeObjectWhenAddingTwoRupeeObjects(){
+    public void shouldReturnRupeeThirtyWhenAddingTwoRupeeObjects(){
         Rupee rupeeTen = new Rupee(10);
         Rupee rupeeTwenty = new Rupee(20);
 
-        Rupee rupeeResult = new Rupee();
-        assertEquals(new Rupee(30),rupeeResult.add(rupeeTen,rupeeTwenty));
+        assertEquals(new Rupee(30),rupeeTen.add(rupeeTwenty));
+    }
 
-        Rupee rupeeFifty = new Rupee(50);
-        Rupee rupeeThirty = new Rupee(30);
+    @Test
+    public void shouldReturnRupeeFiftyWhenAddingTwoRupeeObjects(){
+        Rupee rupeeTen = new Rupee(10);
+        Rupee rupeeForty = new Rupee(40);
 
-        assertEquals(new Rupee(80),rupeeResult.add(rupeeFifty,rupeeThirty));
+        assertEquals(new Rupee(50),rupeeTen.add(rupeeForty));
     }
 
     @Test
@@ -25,7 +27,7 @@ public class RupeeTestClass {
         Rupee firstRupeeObject = new Rupee(10);
         Rupee secondRupeeObject = new Rupee(10);
 
-        assertEquals(true, firstRupeeObject.equals(secondRupeeObject));
+        assertTrue(firstRupeeObject.equals(secondRupeeObject));
     }
 
     @Test
@@ -33,8 +35,8 @@ public class RupeeTestClass {
         Rupee firstRupeeObject = new Rupee(10);
         Rupee secondRupeeObject = new Rupee(50);
 
-        assertEquals(false, firstRupeeObject.equals(secondRupeeObject));
-        assertEquals(false, firstRupeeObject.equals(null));
+        assertFalse(firstRupeeObject.equals(secondRupeeObject));
+        assertFalse(firstRupeeObject.equals(null));
     }
 
 }

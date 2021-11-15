@@ -6,16 +6,12 @@ public class Rupee {
 
     private int value;
 
-    public Rupee() {
-        super();
-    }
-
     public Rupee(int value) {
         this.value = value;
     }
 
-    public Rupee add(Rupee rupee1, Rupee rupee2){
-         return new Rupee(rupee1.value + rupee2.value);
+    public Rupee add(Rupee rupee){
+         return new Rupee(this.value + rupee.value);
     }
 
     @Override
@@ -30,7 +26,4 @@ public class Rupee {
     public int hashCode() {
         return Objects.hash(value);
     }
-
-
-
 }
